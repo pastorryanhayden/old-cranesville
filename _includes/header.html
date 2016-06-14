@@ -22,24 +22,22 @@
     </div><!--/infoBar-->
 <div class="MainNavigation">
         <ul class="dropdown menu" data-dropdown-menu>
-            <li><a href="{{ "/welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+            <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
             <li><a href="#">ABOUT US</a>
                 <ul class="menu">
-                {% for p in site.pages %}
-                {% if p.group == "about" %}
-                    <li><a href="{{p.url}}">{{p.title}}</a></li>
-                {% endif %}
-                {% endfor %}
+                
+                    <li><a href="#">item</a></li>
+                
                 </ul>
             </li><!--/End of About Us-->
             <li><a href="#">MINISTRIES</a>
                 <ul class="menu">
-                    {% for m in site.ministries %}
-                    <li><a href="{{m.url}}">{{m.title}}</a></li>
+                    {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
                     {% endfor %}
                 </ul>
             </li><!--/ministries-->
-            <li><a href="{{ "/calendar.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+            <li><a href="{{ "calendar.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
             <li><a href="#">MEDIA</a>
                 <ul class="menu">
                     <li><a href="#">Sermons</a></li>
@@ -47,7 +45,7 @@
                     <li><a href="#">Gallery</a></li>
                 </ul>
             </li><!--/media-->
-            <li><a href="{{ "/contactus.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+            <li><a href="{{ "contactus.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
         </ul><!--.dropdown menu -->
 </div><!--/MainNavigation-->
 <div class="MobileNavigation">
@@ -56,24 +54,22 @@
 </header>
 <div class="off-canvas position-right" id="offCanvas" data-off-canvas data-position="right">
     <ul class="vertical menu" data-drilldown>
-    <li><a href="{{ "/welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
+    <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
     <li><a href="#">ABOUT US</a>
         <ul class="menu">
-            {% for p in site.pages %}
-                {% if p.group == "about" %}
-                    <li><a href="{{p.url}}">{{p.title}}</a></li>
-                {% endif %}
-                {% endfor %}
+            
+                    <li><a href="#">item</a></li>
+        
         </ul>
     </li><!--/End of About Us-->
     <li><a href="#">MINISTRIES</a>
         <ul class="menu">
-             {% for m in site.ministries %}
-                    <li><a href="{{m.url}}">{{m.title}}</a></li>
-            {% endfor %}
-        </ul>
+                    {% for item in site.data.ministries %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endfor %}
+                </ul>
     </li><!--/ministries-->
-    <li><a href="{{ "/calendar.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
+    <li><a href="{{ "calendar.html" | prepend: site.baseurl | prepend: site.url }}">CALENDAR</a></li>
     <li><a href="#">MEDIA</a>
         <ul class="menu">
             <li><a href="#">Sermons</a></li>
@@ -81,7 +77,7 @@
             <li><a href="#">Gallery</a></li>
         </ul>
     </li><!--/media-->
-    <li><a href="{{ "/contactus.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
+    <li><a href="{{ "contactus.html" | prepend: site.baseurl | prepend: site.url }}">CONTACT US</a></li>
 </ul><!--.dropdown menu --></div><!--slideout menu-->
 <div class="off-canvas-content" data-off-canvas-content>
 

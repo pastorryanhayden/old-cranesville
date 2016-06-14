@@ -29,39 +29,26 @@ layout: default
 </div><!--/currentSeries-->
 <div class="homeMinistries">
     <h1>Featured Ministries</h1>
-    <div class="ministry" style="background: url(/assets/img/patch.jpg) no-repeat center center">
+    {% for item in site.data.ministries limit: 3 %}
+        {% if item.header_image %}
+            {% for img in item.header_image %}
+                <div class="ministry" style="background: url({{img.url}}) no-repeat center center">
+       	    {% endfor%}
+        {% else %}
+            <div class="ministry" style="background: url(/assets/default_header.jpg) no-repeat center center">
+        {% endif %}
+
         <div class="ministry2">
         <div class="ministry__wrapper">
             <div class="ministry__wrapper2">
-        <h2><a href="#">Patch The Pirate Club</a></h2>
-        <p>A weekly Bible and Choir club for kids aged 4-13.  Patch Club meets on Thursday Nights during the school year from 6:30PM till 8:00PM.</p>
-        <a class="button hollow" href="#">Learn More</a>
+        <h2><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></h2>
+        <p>{{item.description | truncate: 140 }}</p>
+        <a class="button hollow" href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">Learn More</a>
     </div><!--/ministry__wrapper2-->
     </div><!--/ministry-wrapper-->
     </div><!--/ministry2-->
     </div><!--/ministry-->
-    <div class="ministry" style="background: url(/assets/img/sports.jpg) no-repeat center center">
-        <div class="ministry2">
-        <div class="ministry__wrapper">
-            <div class="ministry__wrapper2">
-        <h2><a href="#">Sports</a></h2>
-        <p>A weekly Bible and Choir club for kids aged 4-13.  Patch Club meets on Thursday Nights during the school year from 6:30PM till 8:00PM.</p>
-        <a class="button hollow" href="#">Learn More</a>
-    </div><!--/ministry__wrapper2-->
-    </div><!--/ministry-wrapper-->
-    </div><!--/ministry2-->
-    </div><!--/ministry-->
-    <div class="ministry" style="background: url(/assets/img/patch.jpg) no-repeat center center">
-        <div class="ministry2">
-        <div class="ministry__wrapper">
-            <div class="ministry__wrapper2">
-        <h2><a href="#">Patch The Pirate Club</a></h2>
-        <p>A weekly Bible and Choir club for kids aged 4-13.  Patch Club meets on Thursday Nights during the school year from 6:30PM till 8:00PM.</p>
-        <a class="button hollow" href="#">Learn More</a>
-    </div><!--/ministry__wrapper2-->
-    </div><!--/ministry-wrapper-->
-    </div><!--/ministry2-->
-    </div><!--/ministry-->
+    {% endfor %}
 </div><!--/homeMinistries-->
 <div class="homeEvents">
     <h2>Next Church Event</h2>
