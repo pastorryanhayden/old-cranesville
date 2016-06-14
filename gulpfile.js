@@ -15,9 +15,55 @@
      ghPages = require('gulp-gh-pages'),
      streamify = require('gulp-streamify');
 
- gulp.task('blog', function () {
+ gulp.task('sermons', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appSTMfI6fck1RzVM/Posts?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Sermons?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('sermons.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+  gulp.task('series', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Series?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('series.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+  gulp.task('blog', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appxF48xfkO7dHWGh/Posts?api_key=keyRTLlrVS02vC3Vx',
             headers: {
                   'User-Agent': 'request'
             }
@@ -38,7 +84,122 @@
             })))
         .pipe(gulp.dest('./_data'));
  });
- 
+  gulp.task('devos', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appWalqcA1KjDB5Ix/Devotions?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('devos.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+   gulp.task('abouts', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appNOtPfC2oY5GcGt/Pages?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('abouts.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+ gulp.task('events', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Church%20Events?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('events.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+  gulp.task('photos', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Photos?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('photos.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+ gulp.task('ministries', function () {
+    return request({
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Ministries?api_key=keyRTLlrVS02vC3Vx',
+            headers: {
+                  'User-Agent': 'request'
+            }
+        })
+        .pipe(source('ministries.json'))
+        .pipe(streamify(jsonTransform(function (data) {
+                // data is your json
+                
+                // start off with an empty array
+                var arr = [];
+                // loop through every record
+                for (var i = 0, ii = data.records.length; i < ii; i++)
+                {
+                  // push the item value into the array
+                  arr.push(data.records[i].fields);
+                }
+                return arr;
+            })))
+        .pipe(gulp.dest('./_data'));
+ });
+
   gulp.task('download', function() {
   return download({
       fileName: 'radio_devos.json',
@@ -86,4 +247,4 @@ gulp.task('jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('default', ['blog','css', 'jekyll', 'serve']);
+gulp.task('default', ['blog', 'sermons', 'devos', 'series', 'abouts', 'events', 'ministries', 'photos','css', 'jekyll', 'serve']);

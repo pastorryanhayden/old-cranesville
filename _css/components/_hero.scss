@@ -1,79 +1,55 @@
-div.hero {
-    background-image: url(http://sitesforchurch.github.io/sitesforchurch-jekyll/img/hero.jpg);
+.hero {
+    background: url(http://storage.biblebaptistmattoon.org/media/hero.jpg) no-repeat top center;
+    min-height: 80vh;
     background-size: cover;
-}
-div.hero div.row {
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
+    padding-top: 50px;
+    @include breakpoint(medium){
+        padding-top: 100px;
+    }
 
-.hero__header {
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 40px;
-    text-align: center;
-@include breakpoint(small down){
-        order: 1;
+    p {
+        text-align: center;
+        font-size: 60px;
+        color: $white;
     }
 }
 
-.hero__header h1 {
-    color: $primary-color;
-    font-size: 80px; 
-    font-weight: bold;
-    margin-bottom: 0;
-    line-height: 80px;
-
-span {
+.hero__box {
+    width: 90%;
+    min-height: 700px;
+    background: rgba($black, .8);
     color: $white;
-}
-}
-.hero__header h3 {
-    font-weight: normal;
-    font-size: 35px;
-    color: $black;
-}
-.hero__video {
-    @include breakpoint(small down){
-        order: 3;
-    }
-
-}
-.hero__video a {
-    display: block;
-    background: url(http://sitesforchurch.github.io/sitesforchurch-jekyll/img/computervideo.png) no-repeat bottom center;
-    width: 483px;
-    height: 406px;
-    line-height: 406px;
     margin-left: auto;
     margin-right: auto;
-} 
-
-.hero__signup {
-    color: $white;
-    font-size: 28px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 50px;
+    justify-content: space-around;
     padding-bottom: 50px;
-    @include breakpoint(medium down){
-        padding-bottom: 20px;
-        padding-top: 20px;
+    padding-top: 50px;
+    @include breakpoint (medium) {
+        width: 629px;
+        min-height: 700px;
     }
+}
 
-    @include breakpoint(small down){
-        order: 2;
-        padding-bottom: 30px;
-    }
+.hero__box h3 {
+    padding-top: 50px;
+    font-weight: 700;
+}
 
-    hr {
-        color: $white;
-        border-color: $white;
-        width: 80%;
-        border-width: 3px;
-    }
-    a.button.large {
-        background-color: $primary-color;
-    }
+h3.worship {
+    background: url(http://storage.biblebaptistmattoon.org/media/heart.png) no-repeat top center;
+}
+
+h3.study {
+    background: url(http://storage.biblebaptistmattoon.org/media/bible.png) no-repeat top center;
+}
+
+h3.serve {
+    background: url(http://storage.biblebaptistmattoon.org/media/community.png) no-repeat top center;
+}
+
+h3.seek {
+    background: url(http://storage.biblebaptistmattoon.org/media/gift.png) no-repeat top center;
 }
