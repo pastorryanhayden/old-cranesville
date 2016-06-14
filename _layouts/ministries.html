@@ -1,0 +1,68 @@
+---
+layout: default
+---
+{% for ministry in site.ministries %}
+
+{% if ministry.ministry-header-image %}
+<style>
+.ministriesPage__Title {
+background: url({{ministry.ministry-header-image}}) no-repeat center center;
+</style>
+{% endif %}
+
+<div class="ministriesPage">
+    <div class="ministriesPage__Title">
+        <h1>{{ministry.title}}</h1>
+        <div class="ministriesDescription">
+            <p>{{ministry.description}}</p>
+        </div><!--/ministriesDescription-->
+    </div><!--/ministriesPage__Title-->
+    <div class="ministriesPage__Content">
+        <div class="ministriesPage__Content-main-content">
+            <div class="ministryInfo">
+                <div class="ministryInfo-ministry">
+                    <p><i class="fi-torsos-all"></i> Group: <span>{{ministry.group}}</span></p>
+                    <p><i class="fi-clock"></i> Meeting Time: <span>{{ministry.time}}</span></p>
+                    <p><i class="fi-map"></i> Meeting Place: <span>{{ministry.location}}</span></p>
+                </div><!--ministryInfo-ministry-->
+                <div class="ministryInfo-leader">
+                    <p><i class="fi-torso"></i> Leader: <span>{{ministry.leader}}</span></p>
+                    {% if ministry.leader-thumbnail %}
+                    <img src="{{ministry.leader-thumbnail}}" alt="" class="thumbnail" width="100px">
+                    {% endif %}
+                    <p class="leaderDescription">{{ministry.leader-bio}}</p>
+                    <p><i class="fi-telephone"></i> <span>{{ministry.leader-phone}}</span></p>
+                    <p><i class="fi-mail"></i><span> {{ministry.leader-email}}</span></p>
+
+                </div><!--/ministryInfo-leader-->
+            </div><!--/ministryInfo-->
+            {{content}}
+        </div><!--/ministriesPage__Content-main-content-->
+       
+        <div class="ministriesPage__Content-secondary-content">
+                {% if ministry.ministry-logo  %}
+                <div class="ministriesLogo">
+                    <img src="{{ministry.ministry-logo}}" alt="ministry logo">
+                </div><!--ministriesLogo-->
+                {% endif %}
+                {%if ministry.calendar-tag %}
+                <div class="ministriesCalendar">
+                    <h3>Upcoming Ministry Events:</h3>
+                    <div data-tockify-component="mini"  data-tockify-calendar="biblebaptistchurch" data-tockify-tags="{{ministry.calendar-tag}}" data-tockify-view="agenda"></div>
+                    <script data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+
+                </div><!--/ministriesCalendar-->
+                {% endif %}
+                <div class="ministriesPhotos">
+                    <h3>Recent Ministry Photos:</h3>
+                    <div class="galleryWrapper">
+                        {% for photos in minstry.gallery %}
+                        <a href="#" class="thumbnail"><img src="{{photo.url}}" alt="{{photo.title}}"></a>
+                        {% endfor %}
+                    </div> <!-- galleryWrapper -->
+
+                </div><!--/ministriesPhotos-->
+        </div><!--/ministriesPage__Content-secondary-content-->
+    </div><!--/ministriesPage__Content-->
+</div><!--ministriesPage-->
+ {% endfor %}
