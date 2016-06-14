@@ -11,18 +11,16 @@ layout: default
     <p><i class="fi-arrow-down"></i></p>
 </div><!--/hero-->
 <div class="currentSeries">
+    {% for item in site.data.series limit: 2 offset: 1 %}
     <div class="currentSeries__series">
-        <a href="#"><img src="http://placehold.it/240x240" alt="sermon series graphic" class="thumbnail"></a>
-    <p>Sunday Morngings @10:30 AM</p>
-    <h3><a href="#">Unsearchable Riches in Christ</a></h3>
-    <p>A study in the book of Ephesians</p>
+        <a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{%if item.featured_image%}{% for img in item.featured_image %}<img src="{{ img.url }}" alt="sermon series graphic" class="thumbnail">{% endfor %}{% else %}<img src="http://placehold.it/240x240" alt="sermon series graphic" class="thumbnail">{%endif%}</a>
+        {% if item.service %}
+    <p>{{ item.service}}</p>
+        {% endif %}
+    <h3><a href="{{ item.title | datapage_url: 'series' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></h3>
+    <p>{{ item.description | truncate: 100 }}</p>
     </div><!--/currentSeries__series-->
-    <div class="currentSeries__series">
-        <a href="#"><img src="http://placehold.it/240x240" alt="sermon series graphic"></a>
-    <p>Sunday Morngings @10:30 AM</p>
-    <h3><a href="#">Unsearchable Riches in Christ</a></h3>
-    <p>A study in the book of Ephesians</p>
-    </div><!--/currentSeries__series-->
+    {% endfor %}
     <div class="currentSeries__explanation">
         <p>Click either of the links above to listen to recent sermons from these series.</p>
     </div><!--/currentSeries__explanation-->

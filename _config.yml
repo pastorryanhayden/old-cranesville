@@ -25,3 +25,8 @@ page_gen:
     template: 'ministries'
     name: 'name'
     dir: 'ministries'
+  - data: 'series'
+    template: 'series'
+    name: 'title'
+    dir: 'series'
+

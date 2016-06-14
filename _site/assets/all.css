@@ -5700,7 +5700,7 @@ h3.seek {
     transition: box-shadow 200ms ease-out;
     border-radius: 0;
     margin-bottom: 1rem;
-    border-radius: 240px; }
+    border-radius: 30px; }
     .currentSeries__series a img:hover, .currentSeries__series a img:focus {
       box-shadow: 0 0 6px 1px rgba(74, 144, 226, 0.5); }
   .currentSeries__series p {

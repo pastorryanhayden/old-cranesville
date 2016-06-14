@@ -246,5 +246,5 @@ gulp.task('jekyll', () => {
   jekyll.stdout.on('data', jekyllLogger);
   jekyll.stderr.on('data', jekyllLogger);
 });
-
+gulp.task('data', ['blog', 'sermons', 'devos', 'series', 'abouts', 'events', 'ministries', 'photos']);
 gulp.task('default', ['blog', 'sermons', 'devos', 'series', 'abouts', 'events', 'ministries', 'photos','css', 'jekyll', 'serve']);
