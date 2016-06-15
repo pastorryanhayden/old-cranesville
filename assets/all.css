@@ -6777,7 +6777,9 @@ footer {
   padding-top: 30px; }
   .sermonslistContent.singleSeriesPage h2 {
     text-align: center;
-    width: 100%; }
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px; }
   .sermonslistContent.singleSeriesPage .sermonslistItem__teaser {
     width: 83.33333%;
     float: left;
@@ -6790,6 +6792,10 @@ footer {
         padding-right: 0.9375rem; } }
     .sermonslistContent.singleSeriesPage .sermonslistItem__teaser:last-child:not(:first-child) {
       float: right; }
+
+.sermonslistContent.singleSermonPage h2 {
+  margin-top: 50px;
+  margin-bottom: 50px; }
 
 .serieslistContent {
   padding-top: 50px;

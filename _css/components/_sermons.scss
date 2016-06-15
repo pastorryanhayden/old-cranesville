@@ -184,6 +184,8 @@ margin-bottom: 30px;
     }
 }
 
+
+
 // Single Series Page Styles
 
 .singleSeriesHeader {
@@ -254,6 +256,8 @@ margin-bottom: 30px;
     h2 {
         text-align: center;
         width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
 
     }
 
@@ -261,4 +265,9 @@ margin-bottom: 30px;
     @include grid-column(10);
     @include grid-column-offset(1);
     }
+}
+
+.sermonslistContent.singleSermonPage h2 {
+     margin-top: 50px;
+     margin-bottom: 50px;
 }
