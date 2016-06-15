@@ -17,9 +17,10 @@
 
  gulp.task('sermons', function () {
     return request({
-            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Sermons?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Sermons?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('sermons.json'))
@@ -40,9 +41,10 @@
  });
   gulp.task('series', function () {
     return request({
-            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Series?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/apprDNNyNO4RHDP1q/Series?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('series.json'))
@@ -63,9 +65,10 @@
  });
   gulp.task('blog', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appxF48xfkO7dHWGh/Posts?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/appxF48xfkO7dHWGh/Posts?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('blog.json'))
@@ -86,9 +89,10 @@
  });
   gulp.task('devos', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appWalqcA1KjDB5Ix/Devotions?api_key=keyRTLlrVS02vC3Vx',
+      url: 'https://api.airtable.com/v0/appWalqcA1KjDB5Ix/Devotions?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('devos.json'))
@@ -109,9 +113,10 @@
  });
    gulp.task('abouts', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appNOtPfC2oY5GcGt/Pages?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/appNOtPfC2oY5GcGt/Pages?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('abouts.json'))
@@ -132,9 +137,10 @@
  });
  gulp.task('events', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Church%20Events?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Church%20Events?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('events.json'))
@@ -155,9 +161,10 @@
  });
   gulp.task('photos', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Photos?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Photos?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('photos.json'))
@@ -178,9 +185,10 @@
  });
  gulp.task('ministries', function () {
     return request({
-            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Ministries?api_key=keyRTLlrVS02vC3Vx',
+            url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Ministries?&view=ordered',
             headers: {
-                  'User-Agent': 'request'
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
             }
         })
         .pipe(source('ministries.json'))
@@ -203,9 +211,10 @@
   gulp.task('download', function() {
   return download({
       fileName: 'radio_devos.json',
-      request: {
-        url: 'https://api.airtable.com/v0/appWalqcA1KjDB5Ix/Devotions?api_key=keyRTLlrVS02vC3Vx'
-      }
+      headers: {
+                  'User-Agent': 'request',
+                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
+            }
     })
     .pipe(gulp.dest('./_data'))
   ;

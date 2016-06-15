@@ -29,4 +29,8 @@ page_gen:
     template: 'series'
     name: 'title'
     dir: 'series'
+  - data: 'sermons'
+    template: 'sermon'
+    name: 'title'
+    dir: 'sermons'
 

@@ -1,0 +1,101 @@
+---
+layout: default
+---
+
+<div class="sermonslistContent__header">
+    <div class="wrapper">
+        <h1>Sermons</h1>
+        <h3>The Preaching Ministry of Bible Baptist Church</h3>
+        </div><!--/sermonslistContent__header-->
+    </div><!--/sermonlistContent__header-->
+<div class="singleSermonHeader">
+    <img class="singleSermonHeader__mainImage" src="http://placehold.it/1920x1080" alt="Series Graphic">
+    <div class="singleSermonHeader__teaser">
+    <div class="singleSermonHeader__title">
+        <h3>{{page.title}}</h3>
+         <ul class="action__buttons menu">
+                    {% if page.sermon_mp3 %}
+                    {% for item in page.sermon_mp3 %}
+                    <li><a href="{{item.url}}" alt="play"><i class="fi-play"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if page.handout %}
+                    {% for item in page.handout %}
+                    <li><a href="{{item.url}}" alt="handout"><i class="fi-page-pdf"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                    {% if page.slides %}
+                    {% for item in page.slides %}
+                    <li><a href="{{item.url}}" alt="slides"><i class="fi-projection-screen"></i></a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul><!--/action__buttons-->
+        </div><!--/sermonslistItem__title-->
+        <ul class="singleSermonHeader__tagline">
+         <li><i class="fi-calendar"></i> {{page.date}}</li>
+                <li><i class="fi-clock"></i> {{page.service}}</li>
+                <li><i class="fi-torso-business"></i> {{page.speaker_name}}</li>
+                <li><i class="fi-book"></i> {{page.bible_text}}</li>
+        </ul>
+        {% if page.sermon_mp3 %}
+                {% for item in page.sermon_mp3 %}
+                <audio class="sermonslistPlayer" controls>
+                    <source src="{{item.url}}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                <a href="{{item.url}}" class="button warning" target="blank" download><i class="fi-download"></i> Download</a>
+                {% endfor %}
+                {% endif %}
+    </div>
+</div>
+{% if page.body_content %}
+<div class="singleSermonContent">
+    {{ page.body_content | markdownify }}
+ 
+</div><!--/singleSermonContent-->
+{% endif %}
+
+<div class="sermonslistContent singleSermonPage">
+
+    <div class="sermonslistContent__MainList">
+        <h2>More Sermons From This Series:</h2>
+        <div class="sermonslistItem">
+            <div class="sermonslistItem__teaser">
+            <div class="sermonslistItem__title">
+                <h3>God Loves Sinners</h3>
+                <ul class="action__buttons menu">
+                    <li><a href="#" alt="play"><i class="fi-play"></i></a></li>
+                    <li><a href="#" alt="handout"><i class="fi-page-pdf"></i></a></li>
+                    <li><a href="#" alt="sound"><i class="fi-projection-screen"></i></a></li>
+                </ul><!--/action__buttons-->
+                </div><!--/sermonslistItem__title-->
+                <ul class="sermonslistItem__tagline">
+                <li><i class="fi-calendar"></i> Sunday, January 1st</li>
+                <li><i class="fi-clock"></i> Sunday Evening</li>
+                <li><i class="fi-torso-business"></i> Pastor Josh Fryman</li>
+                <li><i class="fi-book"></i> Romans 1:6</li>
+                </ul>
+                <p class="sermonslistItem__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <audio class="sermonslistPlayer" controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                    <source src="horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                <a href="#" class="button warning"><i class="fi-download"></i> Download</a>
+            </div><!--/sermonslistItem__teaser-->
+        </div><!--/sermonslistItem-->
+       
+    </div><!--/end main list-->
+</div><!--/sermonslistContent-->
+{<div class="sermonslistPagination">
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      <li class="disabled">« <span class="show-for-sr">Previous page</span></li>
+      <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+      <li><a href="#" aria-label="Page 2">2</a></li>
+      <li><a href="#" aria-label="Page 3">3</a></li>
+      <li><a href="#" aria-label="Page 4">4</a></li>
+      <li><a href="#" aria-label="Page 5">5</a></li>
+      <li><a href="#" aria-label="Next page">» <span class="show-for-sr">Next page</span></a></li>
+    </ul>
+
+</div><!--/sermonslistPagination-->
