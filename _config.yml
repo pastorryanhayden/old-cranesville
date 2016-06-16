@@ -11,6 +11,7 @@ github_username:  jekyll
 default_header_image: "assets/default_header.jpg"
 default_sermon_image: "assets/default_header.jpg"
 default_blog_image: "assets/default_header.jpg"
+default_about_image: "assets/default_header.jpg"
 
 # Build settings
 markdown: kramdown
@@ -39,7 +40,10 @@ page_gen:
     template: 'blog-entry'
     name: 'title'
     dir: 'blog-posts'
-  
+  - data: 'abouts'
+    template: 'aboutpage'
+    name: 'title'
+    dir: 'about-us'
 
 ftp_host: 'biblebaptistmattoon.org'
 ftp_dir: 'biblebaptistmattoon.org/'
