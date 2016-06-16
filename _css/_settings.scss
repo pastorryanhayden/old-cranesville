@@ -50,11 +50,16 @@ $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #4a90e2,
-  secondary: #5ec2b7,
+  secondary: #27213C,
   success: #ff220c,
   warning: #ff220c,
-  alert: #303633,
+  alert: #1F1F15,
 );
+$main-color: #4a90e2;
+$secondary-color: #27213C;
+$bold-color: #ff220c;
+$subtle-color: #303633;
+$text-color: #1F1F15;
 $light-gray: #e6e6e6;
 $medium-gray: #303633;
 $dark-gray: #0e0b08;

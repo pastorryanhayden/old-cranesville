@@ -33,7 +33,7 @@ layout: default
             <div class="sermonslistItem__teaser">
             <div class="sermonslistItem__title">
                 <h3><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h3>
-                <ul class="action__buttons menu">
+                <ul class="action__buttons">
                     {% if sermon.sermon_mp3 %}
                     {% for item in sermon.sermon_mp3 %}
                     <li><a href="{{item.url}}" alt="play"><i class="fi-play"></i></a></li>

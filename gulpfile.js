@@ -139,8 +139,10 @@
     return request({
             url: 'https://api.airtable.com/v0/appo4EmHX9KELKJ0u/Church%20Events?&view=ordered',
             headers: {
-                  'User-Agent': 'request',
-                  'Authorization': 'Bearer keyRTLlrVS02vC3Vx'
+                  "Authorization": "Bearer keyRTLlrVS02vC3Vx",
+                  "maxrecords": "100",
+                  "view": "ordered",
+                  'User-Agent': 'request'
             }
         })
         .pipe(source('events.json'))

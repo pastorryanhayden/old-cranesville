@@ -57,7 +57,7 @@
 }
 
 .homeMinistries {
-    background: $secondary-color;
+    background: $subtle-color;
 
 h1 {
     color: $white;
@@ -71,13 +71,13 @@ h1 {
 
 .ministry2 {
     width: 100%;
-    background-color: rgba($primary-color, .5);
+    background-color: rgba($main-color, .5);
 }
 
 .ministry:nth-child(2) .ministry2 {
     width: 100%;
     height: 100%;
-    background-color: rgba($secondary-color, .5);
+    background-color: rgba($subtle-color, .5);
 }
 .ministry:nth-child(3) .ministry2 {
     width: 100%;
@@ -191,7 +191,7 @@ h1 {
 }
 
 .quickLinks li a:hover {
-    color: $primary-color;
+    color: $main-color;
 }
 
 .quickLinks li a i {
@@ -210,5 +210,5 @@ h1 {
 }
 
 .quickLinks li a:hover i {
-    border-color: $primary-color;
+    border-color: $main-color;
 }

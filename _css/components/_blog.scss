@@ -10,14 +10,14 @@
 .blogPost__header {
     text-align: center;
     padding-top: 40px;
-    border-top: 2px dashed $secondary-color;
-    border-bottom: 2px dashed $secondary-color;
+    border-top: 2px dashed $subtle-color;
+    border-bottom: 2px dashed $subtle-color;
     padding-bottom: 40px;
     margin-bottom: 30px;
     h1 {
         font-weight: bold;
         text-align: center;
-        color: $success-color;
+        color: $secondary-color;
     }
 }
 
@@ -30,10 +30,10 @@
         color: $primary-color-dark;
     }
     h3 {
-        color: $secondary-color;
+        color: $subtle-color;
     }
     h4 {
-        color: $primary-color;
+        color: $main-color;
     }
     img {
         text-align: center;

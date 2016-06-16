@@ -54,11 +54,23 @@ layout: default
         <p>There is always something going on at Bible Baptist.  Here is what is coming up next:</p>
         <a href="#" class="button"><i class="fi-info"></i>  View All Events</a>
     </div><!--/homeEvents__explanation-->
+    {% if site.data.events.Past == 0 %}
+    {% for event in site.data.events limit: 1 %}
     <div class="homeEvents__feature">
-        <a href="#"><img src="http://placehold.it/526x297" alt="Calendar Featured Image"></a>
-        <h3><a href="#">Church Event Title</a></h3>
-        <p class="date">May 25, 2016</p>
+        <a href="#">
+            {% if event.featured_image %}
+            {% for img in event.featured_image %}
+            <img src="{{ img.url }}" alt="{{ event.event_name }}" width="526" >
+            {% endfor %}
+            {% else %}
+            <img src="http://placehold.it/526x297" alt="Default Featured Image - {{ event.event_name }}">
+            {% endif %}
+        </a>
+        <h3><a href="#"> {{ event.event_name }} </a></h3>
+        <p class="date"> {{event.DateTime | date: "%a, %B %d, %y"}} </p>
     </div><!--/homeEvents__feature-->
+    {% endfor %}
+    {% endif %}
 </div><!--/homeEvents-->
 <div class="homeLinks">
     <ul class="quickLinks">
