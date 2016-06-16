@@ -6197,7 +6197,8 @@ footer {
     .welcomeIntro .content img {
       float: right;
       border-radius: 400px;
-      margin-left: 40px; }
+      margin-left: 40px;
+      width: 300px; }
     .welcomeIntro .content p {
       max-width: 700px; }
 
@@ -6255,6 +6256,8 @@ footer {
   .welcomeKids .photos img {
     border-radius: 200px;
     border: 2px solid #4a90e2;
+    width: 150px;
+    height: 150px;
     margin-bottom: 20px; }
 
 .welcomeLocation {
