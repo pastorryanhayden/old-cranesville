@@ -4484,6 +4484,9 @@ header {
 .off-canvas-content, .off-canvas-content {
   box-shadow: none; }
 
+.mobile-sidebar ul li {
+  padding-left: 20px; }
+
 /*
  * Foundation Icons v 3.0
  * Made by ZURB 2013 http://zurb.com/playground/foundation-icon-fonts-3
@@ -6854,6 +6857,31 @@ footer {
   .serieslistItem h4 {
     font-size: 30px;
     margin-top: 10px; }
+
+.visitor-section {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+  background: #e6e6e6;
+  margin-top: -20px; }
+  .visitor-section .wrapper {
+    max-width: 600px;
+    padding: 60px; }
+  .visitor-section h2 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+  .visitor-section a.button.visitor-button {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    font-size: 25px; }
 
 .slide-in-down.mui-enter {
   transition-duration: 500ms;
