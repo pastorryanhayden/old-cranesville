@@ -25,9 +25,9 @@
             <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
             <li><a href="#">ABOUT US</a>
                 <ul class="menu">
-                
-                    <li><a href="#">item</a></li>
-                
+                    {% for item in site.data.abouts %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endfor %}
                 </ul>
             </li><!--/End of About Us-->
             <li><a href="#">MINISTRIES</a>
@@ -57,9 +57,9 @@
     <li><a href="{{ "welcome.html" | prepend: site.baseurl | prepend: site.url }}">WELCOME</a></li>
     <li><a href="#">ABOUT US</a>
         <ul class="menu">
-            
-                    <li><a href="#">item</a></li>
-        
+            {% for item in site.data.abouts %}
+            <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+            {% endfor %}
         </ul>
     </li><!--/End of About Us-->
     <li><a href="#">MINISTRIES</a>

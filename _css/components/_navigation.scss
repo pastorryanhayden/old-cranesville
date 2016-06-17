@@ -87,6 +87,18 @@ header {
         font-weight: 600;
         font-family: $header-font-family;
     }
+
+.is-dropdown-submenu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    min-width: 200px;
+    z-index: 1;
+    background: #fefefe;
+    border: 1px solid #cacaca;
+}
+
 }
 
 .MobileNavigation {
