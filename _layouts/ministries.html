@@ -62,7 +62,10 @@ background-size: cover;
                 </div><!--/ministryInfo-leader-->
                 {% endif %}
             </div><!--/ministryInfo-->
-            {{page.body_content}}
+            {% if page.body_content %}
+
+            {{page.body_content | markdownify}}
+            {% endif %}
         </div><!--/ministriesPage__Content-main-content-->
        
         <div class="ministriesPage__Content-secondary-content">
